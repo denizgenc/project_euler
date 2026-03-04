@@ -29,7 +29,7 @@ BIGNUM = (
 def window(data, window_size):
     for i in range(len(data) + 1 - window_size):
         copy = data[i : i + window_size]
-        yield copy
+        yield copy # I don't think this is technically a copy...
 
 
 def problem_0008():
@@ -38,7 +38,7 @@ def problem_0008():
     good_string = "".join(
         [
             split_string[0][:-12],
-            "".join([x[12:-12] for x in split_string]),
+            "".join([x[12:-12] for x in split_string[1:-1]),
             split_string[-1][12:],
         ]
     )
